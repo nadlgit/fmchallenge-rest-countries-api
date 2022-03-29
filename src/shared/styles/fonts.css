@@ -1,0 +1,7 @@
+:root {
+  --font-weight-light: 300;
+  --font-weight-semibold: 600;
+  --font-weight-extrabold: 800;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: var(--font-weight-light);
+}
