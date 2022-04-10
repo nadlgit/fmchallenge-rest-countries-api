@@ -1,22 +1,18 @@
+import styles from './countries-list.module.css';
 import { CountryCard } from '../country-card';
 
-export const CountriesList = () => {
-  const testCountry = {
-    code: 'BEL',
-    name: 'Belgium',
-    region: 'Europe',
-    flag: 'https://flagcdn.com/be.svg',
-    capital: 'Brussels',
-    population: 11555997,
-  };
-  return (
-    <CountryCard
-      code={testCountry.code}
-      flag={testCountry.flag}
-      name={testCountry.name}
-      population={testCountry.population}
-      region={testCountry.region}
-      capital={testCountry.capital}
-    />
-  );
-};
+export const CountriesList = ({ countries }) => (
+  <div className={styles.list}>
+    {countries?.map((country) => (
+      <CountryCard
+        key={country.name}
+        code={country.code}
+        flag={country.flag}
+        name={country.name}
+        population={country.population}
+        region={country.region}
+        capital={country.capital}
+      />
+    ))}
+  </div>
+);

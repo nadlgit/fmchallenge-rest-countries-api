@@ -1,6 +1,6 @@
 @value borderRadius: 5px;
 @value cardWidth: 16em;
-@value marginInline: 1em;
+@value internalMarginInline: 1em;
 
 .card {
   display: inline-block;
@@ -9,6 +9,7 @@
   border-radius: borderRadius;
   color: inherit;
   text-decoration: inherit;
+  margin: 1em;
 }
 .card img {
   width: 100%;
@@ -16,12 +17,12 @@
   border-radius: borderRadius borderRadius 0 0;
 }
 .card h2 {
-  margin-inline: marginInline;
+  margin-inline: internalMarginInline;
   margin-block: 1em;
   font-weight: var(--font-weight-extrabold);
 }
 .card p {
-  margin-inline: marginInline;
+  margin-inline: internalMarginInline;
 }
 .card p > span {
   font-weight: var(--font-weight-semibold);
