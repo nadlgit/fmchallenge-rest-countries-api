@@ -1,1 +1,1 @@
-export { CountriesFilter } from './countries-list';
+export { CountriesList } from './countries-list';
