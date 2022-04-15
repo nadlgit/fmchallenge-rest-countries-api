@@ -1,7 +1,9 @@
+import { LoadingFallback, ErrorFallback } from 'features/misc';
+
 export const withLoading =
   (WrappedComponent) =>
   ({ isLoading, error, ...props }) => {
-    if (isLoading) return <h1>Loading</h1>;
-    if (error) return <h1>Error: {error?.message}</h1>;
+    if (isLoading) return <LoadingFallback />;
+    if (error) return <ErrorFallback error={error} />;
     return <WrappedComponent {...props} />;
   };

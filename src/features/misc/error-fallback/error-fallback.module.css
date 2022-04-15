@@ -1,4 +1,9 @@
 .fallback {
-  font-size: 5rem;
+  font-size: 3rem;
   color: crimson;
+}
+
+.fallback code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.6em;
 }
