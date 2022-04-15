@@ -7,23 +7,27 @@ export const useCountryWithBordersByCode = (code) => {
   const [country, setCountry] = useState({});
   const [borders, setBorders] = useState([]);
   useEffect(() => {
-    fetchCountries(`${API_URL}/alpha/${code}`)
-      .then((countries) => {
-        return countries.length === 1 ? countries[0] : {};
-      })
-      .then((country) => {
-        setCountry(country);
-        return country?.borderCodes?.length > 0
-          ? fetchCountries(`${API_URL}/alpha?codes=${encodeURI(country?.borderCodes?.join(','))}`)
-          : [];
-      })
-      .then((borders) => {
-        setBorders(borders);
-      })
-      .catch((error) => setError(error))
-      .finally(() => {
-        setIsLoading(false);
-      });
+    if (typeof code === 'string' && code.trim().length > 0) {
+      fetchCountries(`${API_URL}/alpha/${encodeURI(code.trim())}`)
+        .then((countries) => {
+          return countries.length === 1 ? countries[0] : {};
+        })
+        .then((country) => {
+          setCountry(country);
+          return country?.borderCodes?.length > 0
+            ? fetchCountries(`${API_URL}/alpha?codes=${encodeURI(country?.borderCodes?.join(','))}`)
+            : [];
+        })
+        .then((borders) => {
+          setBorders(borders);
+        })
+        .catch((error) => {
+          setError(error);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
   }, [code]);
   return { isLoading, error, country, borders };
 };

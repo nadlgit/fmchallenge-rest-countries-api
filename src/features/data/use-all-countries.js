@@ -10,7 +10,9 @@ export const useAllCountries = () => {
       .then((data) => {
         setCountries(data);
       })
-      .catch((error) => setError(error))
+      .catch((error) => {
+        setError(error);
+      })
       .finally(() => {
         setIsLoading(false);
       });

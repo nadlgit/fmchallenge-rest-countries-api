@@ -6,12 +6,14 @@ export const useCountriesByName = (query) => {
   const [error, setError] = useState(null);
   const [countries, setCountries] = useState([]);
   useEffect(() => {
-    if (typeof query === 'string') {
-      fetchCountries(`${API_URL}/name/${encodeURI(query)}`)
+    if (typeof query === 'string' && query.trim().length > 0) {
+      fetchCountries(`${API_URL}/name/${encodeURI(query.trim())}`)
         .then((data) => {
           setCountries(data);
         })
-        .catch((error) => setError(error))
+        .catch((error) => {
+          setError(error);
+        })
         .finally(() => {
           setIsLoading(false);
         });
