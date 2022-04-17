@@ -5,5 +5,11 @@ import { CountryDetails } from 'features/country';
 export const CountryPage = () => {
   const { code } = useParams();
   const { isLoading, error, country, borders } = useCountryWithBordersByCode(code);
-  return withLoading(CountryDetails)({ isLoading, error, country, borders });
+  return withLoading(CountryDetails)({
+    // LoadingComponent: todo,
+    isLoading,
+    error,
+    country,
+    borders,
+  });
 };
