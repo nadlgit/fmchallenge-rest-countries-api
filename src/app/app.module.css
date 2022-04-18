@@ -1,0 +1,24 @@
+.darkattr {
+  --app-bg-color: var(--color-very-dark-blue-bg);
+  --item-bg-color: var(--color-dark-blue);
+  --text-color: var(--color-white);
+  --input-color: var(--color-white);
+}
+.lightattr {
+  --app-bg-color: var(--color-very-light-gray);
+  --item-bg-color: var(--color-white);
+  --text-color: var(--color-very-dark-blue-txt);
+  --input-color: var(--color-dark-gray);
+}
+.app {
+  min-height: 100vh;
+  color: var(--text-color);
+  background-color: var(--app-bg-color);
+}
+
+.appdark {
+  composes: darkattr app;
+}
+.applight {
+  composes: lightattr app;
+}
