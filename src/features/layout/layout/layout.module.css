@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 10vh;
+  background-color: var(--item-bg-color);
+}
+.header h1 {
+  font-weight: var(--font-weight-extrabold);
+}

@@ -1,0 +1,13 @@
+.button {
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.button:focus {
+  outline: var(--text-color) 1px dotted;
+}
+.button:focus:not(:focus-visible) {
+  outline: none;
+}
