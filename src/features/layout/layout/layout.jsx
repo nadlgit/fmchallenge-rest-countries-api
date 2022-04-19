@@ -1,14 +1,12 @@
-// import styles from './layout.module.css';
+import styles from './layout.module.css';
 import { ThemeSwitch } from './theme-switch';
 
-const title = 'Where in the world?';
 export const Layout = ({ children }) => (
-  <div>
-    <header>
-      <h1>
-        {title} <ThemeSwitch />
-      </h1>
+  <>
+    <header className={styles.header}>
+      <h1>Where in the world?</h1>
+      <ThemeSwitch />
     </header>
     <main>{children}</main>
-  </div>
+  </>
 );
