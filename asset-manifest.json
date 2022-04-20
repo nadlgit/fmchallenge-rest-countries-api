@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fmchallenge-rest-countries-api/static/css/main.1d40268e.css",
-    "main.js": "/fmchallenge-rest-countries-api/static/js/main.a205200b.js",
+    "main.css": "/fmchallenge-rest-countries-api/static/css/main.13691a6c.css",
+    "main.js": "/fmchallenge-rest-countries-api/static/js/main.365fa9e1.js",
     "index.html": "/fmchallenge-rest-countries-api/index.html",
-    "main.1d40268e.css.map": "/fmchallenge-rest-countries-api/static/css/main.1d40268e.css.map",
-    "main.a205200b.js.map": "/fmchallenge-rest-countries-api/static/js/main.a205200b.js.map"
+    "main.13691a6c.css.map": "/fmchallenge-rest-countries-api/static/css/main.13691a6c.css.map",
+    "main.365fa9e1.js.map": "/fmchallenge-rest-countries-api/static/js/main.365fa9e1.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d40268e.css",
-    "static/js/main.a205200b.js"
+    "static/css/main.13691a6c.css",
+    "static/js/main.365fa9e1.js"
   ]
 }
