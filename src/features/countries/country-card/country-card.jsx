@@ -2,7 +2,7 @@ import styles from './country-card.module.css';
 import { Link } from 'react-router-dom';
 
 export const CountryCard = ({ code, flag, name, population, region, capital }) => (
-  <Link className={styles.card} to={`${process.env.PUBLIC_URL}/country/${code}`}>
+  <Link className={styles.card} to={`/country/${code}`}>
     <img loading="lazy" src={flag} alt={`${name} flag`} />
     <h2>{name}</h2>
     <p>
