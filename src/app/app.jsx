@@ -19,7 +19,7 @@ export const App = () => (
 const AppConsumer = () => {
   const { theme } = useTheme();
   return (
-    <div className={theme === 'light' ? styles.applight : styles.appdark}>
+    <div className={`${styles.app} ${theme === 'light' ? styles.light : styles.dark}`}>
       <BrowserRouter>
         <Routes>
           <Route path={process.env.PUBLIC_URL} element={<LayoutPage />}>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const CountryCard = ({ code, flag, name, population, region, capital }) => (
   <Link className={styles.card} to={`${process.env.PUBLIC_URL}/country/${code}`}>
-    <img src={flag} alt={`${name} flag`} />
+    <img loading="lazy" src={flag} alt={`${name} flag`} />
     <h2>{name}</h2>
     <p>
       <span>Population:</span> {population.toLocaleString('en-US')}
