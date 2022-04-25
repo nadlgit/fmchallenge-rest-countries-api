@@ -2,6 +2,7 @@
 
 .button {
   border: none;
+  border-radius: 2px;
   background: transparent;
   font: inherit;
   font-weight: var(--font-weight-semibold);
