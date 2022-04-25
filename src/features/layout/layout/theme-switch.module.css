@@ -1,7 +1,11 @@
+@value bp-large-screen from 'shared/styles/breakpoints.module.css';
+
 .button {
   border: none;
   background: transparent;
   font: inherit;
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.75rem;
   color: inherit;
   cursor: pointer;
   display: flex;
@@ -14,4 +18,10 @@
 }
 .button:focus:not(:focus-visible) {
   outline: none;
+}
+
+@media bp-large-screen {
+  .button {
+    font-size: 1rem;
+  }
 }
