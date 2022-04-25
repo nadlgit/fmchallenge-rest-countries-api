@@ -1,13 +1,14 @@
 import { useParams } from 'react-router-dom';
 import { useAllCountries, useCountriesByName, withLoading } from 'features/data';
-import { CountriesContainer, CountriesList } from 'features/countries';
+import { CountriesList, CountriesSearch } from 'features/countries';
 
 export const ResultsPage = () => {
   const { query } = useParams();
   return (
-    <CountriesContainer>
+    <>
+      <CountriesSearch />
       {query ? <CountriesByName query={query} /> : <AllCountries />}
-    </CountriesContainer>
+    </>
   );
 };
 

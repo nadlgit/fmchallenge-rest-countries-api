@@ -1,11 +1,13 @@
 @value bp-large-screen from 'shared/styles/breakpoints.module.css';
+@value paddingInlineSmall 4.27%;
+@value paddingInlineLarge 5.5%;
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 5em;
-  padding-inline: 4.27%;
+  padding-inline: paddingInlineSmall;
   background-color: var(--item-bg-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0562443);
 }
@@ -13,11 +15,25 @@
   font-weight: var(--font-weight-extrabold);
   font-size: 0.875rem;
 }
+.header h1 a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.main {
+  padding-top: 1.5em;
+  padding-inline: paddingInlineSmall;
+}
+
 @media bp-large-screen {
   .header {
-    padding-inline: 5.5%;
+    padding-inline: paddingInlineLarge;
   }
   .header h1 {
     font-size: 1.5rem;
+  }
+  .main {
+    padding-top: 3em;
+    padding-inline: paddingInlineLarge;
   }
 }
