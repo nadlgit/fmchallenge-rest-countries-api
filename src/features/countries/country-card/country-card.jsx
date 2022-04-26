@@ -1,8 +1,8 @@
 import styles from './country-card.module.css';
-import { Link } from 'react-router-dom';
+import { Hyperlink } from 'shared/ui';
 
 export const CountryCard = ({ code, flag, name, population, region, capital }) => (
-  <Link className={styles.card} to={`/country/${code}`}>
+  <Hyperlink url={`/country/${code}`} className={styles.card}>
     <img loading="lazy" src={flag} alt={`${name} flag`} />
     <h2>{name}</h2>
     <p>
@@ -14,5 +14,5 @@ export const CountryCard = ({ code, flag, name, population, region, capital }) =
     <p>
       <span>Capital:</span> {capital}
     </p>
-  </Link>
+  </Hyperlink>
 );

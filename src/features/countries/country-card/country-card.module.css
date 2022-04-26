@@ -3,14 +3,13 @@
 @value internalMarginInline: 1em;
 
 .card {
-  display: inline-block;
+  /* display: inline-block; */
   width: cardWidth;
   height: calc(cardWidth / 3 * 4);
   border-radius: borderRadius;
-  color: inherit;
-  text-decoration: inherit;
   margin: 1em;
   background-color: var(--item-bg-color);
+  box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.0294384);
 }
 .card img {
   width: 100%;
