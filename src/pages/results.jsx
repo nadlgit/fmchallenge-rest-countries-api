@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAllCountries, useCountriesByName, withLoading } from 'features/data';
-import { CountriesList, CountriesSearch, CountriesFilter } from 'features/countries';
+import { CountriesList, CountriesActionBar } from 'features/countries';
 
 export const ResultsPage = () => {
   const { query } = useParams();
@@ -11,8 +11,7 @@ export const ResultsPage = () => {
   }, [query]);
   return (
     <>
-      <CountriesSearch />
-      <CountriesFilter filter={filter} onFilterChange={setFilter} />
+      <CountriesActionBar filter={filter} onFilterChange={setFilter} />
       {query ? <CountriesByName query={query} filter={filter} /> : <AllCountries filter={filter} />}
     </>
   );
