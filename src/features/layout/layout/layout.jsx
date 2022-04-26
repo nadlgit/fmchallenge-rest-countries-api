@@ -1,12 +1,12 @@
 import styles from './layout.module.css';
 import { ThemeSwitch } from './theme-switch';
-import { Link } from 'react-router-dom';
+import { Hyperlink } from 'shared/ui';
 
 export const Layout = ({ children }) => (
   <>
     <header className={styles.header}>
       <h1>
-        <Link to="/">Where in the world?</Link>
+        <Hyperlink url="/">Where in the world?</Hyperlink>
       </h1>
       <ThemeSwitch />
     </header>

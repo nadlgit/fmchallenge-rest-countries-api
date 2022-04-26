@@ -15,10 +15,6 @@
   font-weight: var(--font-weight-extrabold);
   font-size: 0.875rem;
 }
-.header h1 a {
-  color: inherit;
-  text-decoration: inherit;
-}
 
 .main {
   padding-top: 1.5em;
