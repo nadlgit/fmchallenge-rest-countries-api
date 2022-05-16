@@ -1,4 +1,4 @@
-@value bp-large-screen from 'shared/styles/breakpoints.module.css';
+/* @value bp-large-screen from 'shared/styles/breakpoints.module.css';
 
 .filter select {
   height: 4em;
@@ -16,4 +16,4 @@
   .filter select {
     font-size: 0.875rem;
   }
-}
+} */
