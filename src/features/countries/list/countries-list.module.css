@@ -1,4 +1,15 @@
+@value bp-large-screen from 'shared/styles/breakpoints.module.css';
+
 .list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto;
+  gap: clamp(2.5em, 5.21vw, 4.6875em);
+  justify-content: center;
+}
+
+@media bp-large-screen {
+  .list {
+    grid-template-columns: repeat(auto-fill, 16.5em);
+    justify-content: space-between;
+  }
 }
