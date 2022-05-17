@@ -1,4 +1,3 @@
-// import styles from './countries-filter.module.css';
 import { CustomSelect } from './custom-select';
 
 export const CountriesFilter = ({ filter = '', onFilterChange = (value) => {} }) => {
