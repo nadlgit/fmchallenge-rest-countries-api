@@ -7,7 +7,7 @@ export const CountryCard = ({ code, flag, name, population, region, capital }) =
     <CountryFlag src={flag} alt={`${name} flag`} />
     <h2>{name}</h2>
     <p>
-      <span>Population:</span> {population.toLocaleString('en-US')}
+      <span>Population:</span> {population?.toLocaleString('en-US')}
     </p>
     <p>
       <span>Region:</span> {region}
