@@ -1,18 +1,40 @@
+import styles from './custom-select.module.css';
 import { useState } from 'react';
-// import styles from './custom-select.module.css';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 export const CustomSelect = ({ options = [], onChange = (value) => {} }) => {
-  const [value, setValue] = useState();
-  const handleChange = (e) => {
-    const newValue = options[e.target.selectedIndex]?.value;
-    setValue(newValue);
-    onChange(newValue);
+  const [option, setOption] = useState(options.length > 0 ? options[0] : { value: '', label: '' });
+  const [isClosed, setIsClosed] = useState(true);
+  const handleChange = (newOption) => {
+    setOption(newOption);
+    setIsClosed(true);
+    onChange(newOption?.value);
   };
   return (
-    <select onChange={handleChange} value={value}>
-      {options.map((item, key) => (
-        <option key={key}>{item?.label}</option>
-      ))}
-    </select>
+    <div className={styles.container}>
+      <button
+        onClick={() => setIsClosed((value) => !value)}
+        className={styles.select}
+        role="combobox"
+        aria-expanded={!isClosed}
+        aria-controls=""
+      >
+        {option?.label}
+        <MdKeyboardArrowDown />
+      </button>
+      <div className={`${styles.options} ${isClosed ? styles.closed : ''}`}>
+        {options.map((item, key) => (
+          <button
+            key={key}
+            onClick={() => handleChange(item)}
+            className={item?.value === option?.value ? styles.currentoption : ''}
+            role="option"
+            aria-selected={item?.value === option?.value}
+          >
+            {item?.label}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 };
