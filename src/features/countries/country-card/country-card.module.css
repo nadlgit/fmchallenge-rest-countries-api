@@ -5,6 +5,9 @@
   background-color: var(--item-bg-color);
   box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.0294384);
 }
+.card:focus {
+  outline: var(--text-color) 1px dotted;
+}
 .card h2 {
   margin-inline: 1.5rem;
   margin-block: 1.5rem 1rem;

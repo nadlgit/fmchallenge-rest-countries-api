@@ -1,3 +1,15 @@
+@value bp-large-screen from 'shared/styles/breakpoints.module.css';
+
 .actionbar {
   display: flex;
+  flex-direction: column;
+  row-gap: 2.5em;
+  margin-bottom: 2em;
+}
+@media bp-large-screen {
+  .actionbar {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3em;
+  }
 }
