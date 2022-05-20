@@ -1,5 +1,3 @@
-export const API_URL = 'https://restcountries.com/v2';
-
 const composeCountryFromJSON = (json) => ({
   code: json?.alpha3Code,
   name: json?.name,
