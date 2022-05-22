@@ -79,15 +79,15 @@ export const imageHandler = rest.get('https://flagcdn.com/*:image', (req, res, c
   );
 });
 
-export const allErrorHandler = rest.get(`${API_URL}/all`, (req, res, ctx) => {
+export const allErrorHandler = rest.get(`${API_URL}/all*`, (req, res, ctx) => {
   return res(ctx.delay(testDelay), ctx.status(500));
 });
 
-export const nameErrorHandler = rest.get(`${API_URL}/name`, (req, res, ctx) => {
+export const nameErrorHandler = rest.get(`${API_URL}/name*`, (req, res, ctx) => {
   return res(ctx.delay(testDelay), ctx.status(500));
 });
 
-export const alphaErrorHandler = rest.get(`${API_URL}/alpha`, (req, res, ctx) => {
+export const alphaErrorHandler = rest.get(`${API_URL}/alpha*`, (req, res, ctx) => {
   return res(ctx.delay(testDelay), ctx.status(500));
 });
 
