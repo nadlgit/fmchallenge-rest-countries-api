@@ -8,6 +8,7 @@ export const CountriesFilter = ({ filter = '', onFilterChange = (value) => {} })
         { value: '', label: 'Filter by Region' },
         ...regions.map((item) => ({ value: item, label: item })),
       ]}
+      selectedValue={filter}
       onChange={onFilterChange}
     />
   );
