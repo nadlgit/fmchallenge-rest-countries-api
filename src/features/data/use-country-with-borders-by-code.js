@@ -28,6 +28,8 @@ export const useCountryWithBordersByCode = (code) => {
         .finally(() => {
           setIsLoading(false);
         });
+    } else {
+      setIsLoading(false);
     }
   }, [code]);
   return { isLoading, error, country, borders };

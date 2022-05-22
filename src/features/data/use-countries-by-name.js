@@ -18,6 +18,8 @@ export const useCountriesByName = (query) => {
         .finally(() => {
           setIsLoading(false);
         });
+    } else {
+      setIsLoading(false);
     }
   }, [query]);
   return { isLoading, error, countries };
