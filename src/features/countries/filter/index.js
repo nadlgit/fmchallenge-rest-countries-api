@@ -1,1 +1,1 @@
-export { CountriesFilter } from './countries-filter';
+export { CountriesFilter, defaultFilterValue } from './countries-filter';

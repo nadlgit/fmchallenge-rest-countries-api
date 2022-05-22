@@ -1,40 +1,48 @@
 import styles from './custom-select.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
+const getOptionByValue = (options, value) =>
+  options?.length > 0
+    ? options?.find((item) => item?.value === value) ?? options[0]
+    : { value: '', label: '' };
+
 export const CustomSelect = ({ options = [], selectedValue = '', onChange = (value) => {} }) => {
-  const [option, setOption] = useState(
-    options?.find((item) => item?.value === selectedValue) ??
-      (options.length > 0 ? options[0] : { value: '', label: '' })
-  );
   const [isClosed, setIsClosed] = useState(true);
-  const handleChange = (newOption) => {
-    setOption(newOption);
+  const [currentOption, setCurrentOption] = useState(getOptionByValue(options, selectedValue));
+
+  const handleChange = (newValue) => {
     setIsClosed(true);
-    onChange(newOption?.value);
+    setCurrentOption(getOptionByValue(options, newValue));
+    onChange(newValue);
   };
+
+  useEffect(() => {
+    setCurrentOption(getOptionByValue(options, selectedValue));
+  }, [options, selectedValue]);
+
   return (
     <div className={styles.container}>
       <button
         onClick={() => setIsClosed((value) => !value)}
         className={styles.select}
         role="combobox"
-        value={option?.value}
+        value={currentOption?.value}
         aria-expanded={!isClosed}
         aria-controls=""
       >
-        {option?.label}
+        {currentOption?.label}
         <MdKeyboardArrowDown />
       </button>
       <div className={styles.options}>
-        {options.map((item, key) => (
+        {options?.map((item, key) => (
           <button
             key={key}
-            onClick={() => handleChange(item)}
+            onClick={() => handleChange(item?.value)}
             role="option"
             value={item?.value}
-            hidden={isClosed || item?.value === option?.value}
-            aria-selected={item?.value === option?.value}
+            hidden={isClosed || item?.value === currentOption?.value}
+            aria-selected={item?.value === currentOption?.value}
           >
             {item?.label}
           </button>

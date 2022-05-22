@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAllCountries, useCountriesByName, withLoading } from 'features/data';
-import { CountriesList, CountriesActionBar } from 'features/countries';
+import { CountriesList, CountriesActionBar, defaultFilterValue } from 'features/countries';
 
 export const ResultsPage = () => {
   const { query } = useParams();
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState(defaultFilterValue);
   useEffect(() => {
-    setFilter('');
+    setFilter(defaultFilterValue);
   }, [query]);
   return (
     <>
@@ -23,7 +23,9 @@ const CountriesListWithLoading = ({ isLoading, error, countries, filter }) =>
     isLoading,
     error,
     countries:
-      filter === '' ? countries : countries?.filter((country) => country?.region === filter),
+      filter === defaultFilterValue
+        ? countries
+        : countries?.filter((country) => country?.region === filter),
   });
 
 const CountriesByName = ({ query, filter }) => {
