@@ -1,4 +1,5 @@
-import { API_URL, fetchCountries } from './fetch-countries';
+import { API_URL } from 'shared/config';
+import { fetchCountries } from './fetch-countries';
 import { useEffect, useState } from 'react';
 
 export const useCountriesByName = (query) => {
@@ -17,6 +18,8 @@ export const useCountriesByName = (query) => {
         .finally(() => {
           setIsLoading(false);
         });
+    } else {
+      setIsLoading(false);
     }
   }, [query]);
   return { isLoading, error, countries };
