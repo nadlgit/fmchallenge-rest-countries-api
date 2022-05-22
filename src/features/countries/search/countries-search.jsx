@@ -6,7 +6,7 @@ export const CountriesSearch = ({ placeHolder = 'Search for a country...' }) => 
   const navigate = useNavigate();
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      e.target.value.trim() && navigate(`/search/${e.target.value}`);
+      e.target.value.trim() && navigate(`/search/${e.target.value.trim()}`);
       e.target.value = '';
     }
   };
