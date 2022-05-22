@@ -1,1 +1,1 @@
-export { CountriesActionBar } from './action-bar';
+export { CountriesActionBar, defaultFilterValue } from './action-bar';

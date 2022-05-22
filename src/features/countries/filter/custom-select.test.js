@@ -1,7 +1,8 @@
 import { CustomSelect } from './custom-select';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import { useState } from 'react';
 
 describe('CustomSelect', () => {
   const getSelectEl = () => screen.getByRole('combobox');
@@ -59,8 +60,10 @@ describe('CustomSelect', () => {
     expect(getOptionsEl().length).toBe(0);
   });
 
-  test('initial state without options props', () => {
-    render(<CustomSelect selectedValue={testSelectedOption.value} onChange={testOnChange} />);
+  test('initial state with empty array as options props', () => {
+    render(
+      <CustomSelect options={[]} selectedValue={testSelectedOption.value} onChange={testOnChange} />
+    );
     const selectEl = getSelectEl();
     expect(selectEl).toHaveValue('');
     expect(selectEl).toHaveTextContent('');
@@ -83,5 +86,24 @@ describe('CustomSelect', () => {
     expect(selectEl).toHaveValue(testNewOption.value);
     expect(selectEl).toHaveTextContent(testNewOption.label);
     expect(getOptionsEl().length).toBe(0);
+  });
+
+  test('select option with parent component state', () => {
+    let setValue;
+    function Parent() {
+      const [state, setState] = useState(testSelectedOption.value);
+      setValue = setState;
+      return <CustomSelect options={testOptions} selectedValue={state} onChange={testOnChange} />;
+    }
+    render(<Parent />);
+    const selectEl = getSelectEl();
+    expect(selectEl).toHaveValue(testSelectedOption.value);
+    expect(selectEl).toHaveTextContent(testSelectedOption.label);
+    expect(getOptionsEl().length).toBe(0);
+
+    const testNewOption = getSelectableOptions(testSelectedOption)[0];
+    act(() => setValue(testNewOption.value));
+    expect(selectEl).toHaveValue(testNewOption.value);
+    expect(selectEl).toHaveTextContent(testNewOption.label);
   });
 });
