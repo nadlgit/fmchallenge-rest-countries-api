@@ -61,7 +61,7 @@ As expected, I practiced with REST API and asynchronous code.
 
 This time again I also learned a lot in CSS.
 
-On HTML side, it was my first time building a custom select menu and I tried to fulfill accessibility requirements.
+On HTML side, it was my first time building a custom select menu and I tried to fulfill accessibility requirements (but it seems that I failed).
 
 ### Continued development
 
