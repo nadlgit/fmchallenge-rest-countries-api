@@ -1,6 +1,6 @@
 In addition to solve the challenge proposed by Frontend Mentor, my goal was to apply some professionnal methods: feature-based architecture, continuous integration and deployment, testing, pull requests.
 
-As I wanted to play with API, I chose to make multiple API calls when it would have been more efficient to make just one call to fetch all countries then work on this data set.
+I know that I could make just one API call to fetch all countries then work on this data set. Although it would be more efficient and would offer a better user experience, I chose to make multiple calls because I wanted to play with the API.
 
 # Frontend Mentor - REST Countries API with color theme switcher solution
 
