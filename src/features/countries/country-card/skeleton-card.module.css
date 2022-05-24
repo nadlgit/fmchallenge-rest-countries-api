@@ -1,0 +1,14 @@
+@keyframes skeleton {
+  to {
+    opacity: 0.3;
+  }
+}
+.image,
+.title,
+.text {
+  background-color: var(--color-dark-gray);
+  animation: skeleton 0.8s ease-in-out infinite alternate;
+}
+.title {
+  width: 60%;
+}

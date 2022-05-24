@@ -59,7 +59,7 @@ Users should be able to:
 
 As expected, I practiced with REST API and asynchronous code.
 
-This time again I also learned a lot in CSS.
+This time again I learned a lot in CSS.
 
 On HTML side, it was my first time building a custom select menu and I tried to fulfill accessibility requirements (but it seems that I failed).
 
@@ -70,6 +70,7 @@ I plan to continue my learning of [React](https://reactjs.org/) by building proj
 ### Useful resources
 
 - [React-router URLs don't work when refreshing or writing manually](https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually) - This thread helped me to understand my options for routing in single page applications.
+- (french) [Effet Squelette en CSS/JS](https://www.youtube.com/watch?v=SNJwDKbvrSw) - This video showed me how to implement skeleton effect while loading data.
 
 ## Author
 
