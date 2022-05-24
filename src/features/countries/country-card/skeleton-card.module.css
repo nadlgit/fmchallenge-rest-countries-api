@@ -12,3 +12,7 @@
 .title {
   width: 60%;
 }
+.title,
+.text {
+  border-radius: 5px;
+}
