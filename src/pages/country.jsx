@@ -6,7 +6,6 @@ export const CountryPage = () => {
   const { code } = useParams();
   const { isLoading, error, country, borders } = useCountryWithBordersByCode(code);
   return withLoading(CountryDetails)({
-    // LoadingComponent: todo,
     isLoading,
     error,
     country,

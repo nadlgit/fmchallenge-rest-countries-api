@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAllCountries, useCountriesByName, withLoading } from 'features/data';
-import { CountriesList, CountriesActionBar, defaultFilterValue } from 'features/countries';
+import {
+  CountriesList,
+  CountriesActionBar,
+  defaultFilterValue,
+  SkeletonList,
+} from 'features/countries';
 
 export const ResultsPage = () => {
   const { query } = useParams();
@@ -19,7 +24,7 @@ export const ResultsPage = () => {
 
 const CountriesListWithLoading = ({ isLoading, error, countries, filter }) =>
   withLoading(CountriesList)({
-    // LoadingComponent: todo,
+    LoadingComponent: SkeletonList,
     isLoading,
     error,
     countries:
